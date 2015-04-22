@@ -1,9 +1,11 @@
 <%= link_to "Ask new favor", new_favor_path %>
 
-<p>You should
-  <ul>
-    <%= @favors.each do |favor| %>
-      <li><%= favor.contents %> to <%= favor.friend %></li>
-    <% end  %>
-  </ul>
-</p>
+<% unless @favors.empty? %>
+  <p>You should
+    <ul>
+      <% @favors.each do |favor| %>
+        <li><%= favor.contents %> to <%= favor.friend %></li>
+      <% end  %>
+    </ul>
+  </p>
+<% end %>

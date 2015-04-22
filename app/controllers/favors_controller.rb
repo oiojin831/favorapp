@@ -1,16 +1,25 @@
 class FavorsController < ApplicationController
+
+  def index
+    @favors = Favor.all
+  end
+
   def new
     @favor = Favor.new
   end
 
   def create
-    @favor = Favor.new(params.require(:favor).permit(:contents, :friend))
-    @favor.save!
-    redirect_to @favor
+    Favor.create(favor_params)
+    redirect_to favors_path
   end
 
   def show
     @favor = Favor.find(params[:id])
   end
 
+  private
+  
+  def favor_params
+    params.require(:favor).permit(:contents, :friend)
+  end
 end

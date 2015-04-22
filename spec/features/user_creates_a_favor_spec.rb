@@ -1,8 +1,10 @@
 require "rails_helper"
 
-feature "user creates a fovor" do
+feature "user creates a favor" do
   scenario "with valid data" do
-    visit root_path
+    visit favors_path
+
+    click_on "Ask new favor"
     fill_in "Contents", with: "buy me a milk"
     fill_in "Friend", with: "rollin"
     click_on "Ask It!"

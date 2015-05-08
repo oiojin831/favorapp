@@ -1,4 +1,5 @@
 class FavorsController < ApplicationController
+  before_action :require_login
 
   def index
     @favors = Favor.all

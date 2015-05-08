@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :favor do
     contents "MyText"
-friend "MyString"
+    friend "MyString"
   end
 
 end
